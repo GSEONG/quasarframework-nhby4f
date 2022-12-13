@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable tag="a" :to="link">
+  <q-item clickable tag="a" :to="link" @click="goRouter(link)">
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
@@ -17,7 +17,10 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const goRouter = (name) => {
-  router.push(name);
+  if (name === '/login') {
+    localStorage.removeItem('test');
+  }
+  // router.push(name);
 };
 
 const props = defineProps({

@@ -39,6 +39,12 @@ export const useDrawerStore = defineStore('drawer', {
         icon: 'edit',
         link: '/edit',
       },
+      {
+        title: '로그아웃',
+        caption: '로그아웃',
+        icon: 'logout',
+        link: '/login',
+      },
     ],
   }),
 

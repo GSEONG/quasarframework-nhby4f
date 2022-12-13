@@ -16,9 +16,14 @@
         to="/index"
         label="Go Home"
         no-caps
+        @click="login"
       />
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const login = () => {
+  localStorage.setItem('test', 1234);
+};
+</script>
