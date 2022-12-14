@@ -74,10 +74,14 @@
           />
           <q-select
             v-model="settingObj2.resolution"
-            :options="resolOptions"
             label="화질 선택"
             class="input-style"
-          />
+            :options="resolOptions"
+          >
+            <!-- <template #option="scope">
+              {{ scope }}
+            </template> -->
+          </q-select>
           <q-input
             label="비디오 비트레이트"
             type="number"
@@ -99,7 +103,12 @@
 
         <!-- Notice v-close-popup -->
         <q-card-actions align="right" class="content-stretch">
-          <q-btn label="저장하기" color="primary" v-close-popup />
+          <q-btn
+            label="저장하기"
+            color="primary"
+            @click="saveSettings"
+            v-close-popup
+          />
           <q-btn flat label="취소" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
@@ -171,6 +180,10 @@ const prompt = () => {
     .onDismiss(() => {
       // console.log('I am triggered on both OK and Cancel')
     });
+};
+const saveSettings = () => {
+  console.log('settingObj1: ', settingObj1.value);
+  console.log('settingObj2: ', settingObj2.value);
 };
 </script>
 
