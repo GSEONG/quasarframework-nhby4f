@@ -18,7 +18,7 @@ const router = useRouter();
 
 const goRouter = (name) => {
   if (name === '/login') {
-    localStorage.removeItem('test');
+    sessionStorage.removeItem('test');
   }
   // router.push(name);
 };

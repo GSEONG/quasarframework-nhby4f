@@ -6,6 +6,7 @@
     :rows="store.rows"
     :columns="store.columns"
     row-key="name"
+    separator="vertical"
   />
 </template>
 

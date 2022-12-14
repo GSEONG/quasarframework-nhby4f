@@ -33,15 +33,15 @@ export default route(function (/* { store, ssrContext } */) {
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
   Router.beforeEach((to, from, next) => {
-    if (to.path === '/login' && localStorage.getItem('test') === null) {
+    if (to.path === '/login' && sessionStorage.getItem('test') === null) {
       return next();
     }
 
-    if (to.path === '/login' && localStorage.getItem('test') !== null) {
+    if (to.path === '/login' && sessionStorage.getItem('test') !== null) {
       return next('index');
     }
 
-    if (localStorage.getItem('test') !== null) {
+    if (sessionStorage.getItem('test') !== null) {
       return next();
     }
     return next('login');

@@ -29,17 +29,30 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useQuasar } from 'quasar';
 
 const router = useRouter();
+const $q = useQuasar();
+
 const id = ref('');
 const password = ref('');
 const login = () => {
   if (id.value === 'test' && password.value === '1234') {
-    localStorage.setItem('test', 1234);
+    sessionStorage.setItem('test', 1234);
     router.push('index');
+  } else {
+    showNotif();
   }
 };
 const onSubmit = () => {
   login();
+};
+const showNotif = () => {
+  $q.notify({
+    message: '아이디 패스워드가 맞지 않습니다.',
+    color: 'red',
+    position: 'top',
+    timeout: 3000,
+  });
 };
 </script>
