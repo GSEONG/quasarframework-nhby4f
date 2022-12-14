@@ -2,22 +2,25 @@
   <div
     class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
   >
-    <div>
+    <div class="bg-white q-pa-md" style="width: max(300px, 50%)">
       <div class="text-bold text-indigo-8" style="font-size: 4em">Login</div>
 
       <q-form @submit.prevent="onSubmit">
         <q-input v-model="id" type="text" label="ID" required />
         <q-input v-model="password" type="password" label="Password" required />
-        <div class="q-my-sm">(ID: test / password: 1234)</div>
+        <div class="q-my-sm text-bold text-blue">
+          (ID: test / admin , password: 1234)
+        </div>
 
         <q-btn
           type="submit"
-          class="q-mt-xl"
-          color="white"
+          class="q-mt-xl q-pa-md"
+          color="blue-1"
           text-color="blue"
           unelevated
           label="Login"
           no-caps
+          style="width: 100%"
         >
           <q-icon name="login" />
         </q-btn>
@@ -37,8 +40,15 @@ const $q = useQuasar();
 const id = ref('');
 const password = ref('');
 const login = () => {
-  if (id.value === 'test' && password.value === '1234') {
-    sessionStorage.setItem('test', 1234);
+  if (
+    (id.value === 'test' || id.value === 'admin') &&
+    password.value === '1234'
+  ) {
+    const obj = {
+      name: id.value,
+      token: `${password.value}`,
+    };
+    sessionStorage.setItem('test', JSON.stringify(obj));
     router.push('index');
   } else {
     showNotif();

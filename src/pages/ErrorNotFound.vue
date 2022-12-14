@@ -1,6 +1,7 @@
 <template>
   <div
-    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
+    :class="`bg-${mainColor}`"
+    class="fullscreen text-white text-center q-pa-md flex flex-center"
   >
     <div>
       <div style="font-size: 30vh">404</div>
@@ -10,7 +11,7 @@
       <q-btn
         class="q-mt-xl"
         color="white"
-        text-color="blue"
+        :text-color="mainColor"
         unelevated
         to="/index"
         label="Go Home"
@@ -20,10 +21,8 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script setup>
+import { ref } from 'vue';
 
-export default defineComponent({
-  name: 'ErrorNotFound',
-});
+const mainColor = ref('warning');
 </script>

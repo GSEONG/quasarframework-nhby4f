@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>Quasar CLI with Vite App</q-toolbar-title>
+        <q-toolbar-title>{{ name }} 님, 환영합니다.</q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
         <q-space />
@@ -96,6 +96,7 @@ const store = useDrawerStore();
 //     link: 'https://awesome.quasar.dev',
 //   },
 // ];
+const name = JSON.parse(sessionStorage.getItem('test'))?.name;
 const leftDrawerOpen = ref(false);
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
