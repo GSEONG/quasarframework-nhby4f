@@ -1,5 +1,45 @@
 <template>
   <q-page class="column flex-center">
+    <div class="row full-width">
+      <q-card class="col-xs-10">
+        <q-toolbar>
+          <q-input
+            class="full-width"
+            borderless
+            dense
+            placeholder="Search"
+            :model-value="filter"
+          >
+            <template #append>
+              <q-icon name="search" />
+            </template>
+          </q-input>
+        </q-toolbar>
+        <q-list bordered>
+          <q-item>
+            <q-item-section side>
+              <q-checkbox :model-value="true" />
+            </q-item-section>
+            <q-item-section> Go shopping </q-item-section>
+            <q-item-section side>
+              <q-btn flat round size="sm" icon="delete" />
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-card>
+      <div class="col-xs-2">
+        <q-toolbar class="bg-primary">
+          <q-btn
+            fab
+            color="secondary"
+            round
+            icon="add"
+            style="margin-bottom: -42px"
+            class="q-ml-xs"
+          />
+        </q-toolbar>
+      </div>
+    </div>
     <q-btn
       color="black"
       text-color="primary"
@@ -94,6 +134,7 @@ const valListHan = ref(['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ']);
 const min = -5;
 const max = 5;
 const isShow = ref(true);
+const search = ref('');
 
 const testList = ref([
   "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",

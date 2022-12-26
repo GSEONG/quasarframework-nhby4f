@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
-  >
-    <div class="bg-white q-pa-md" style="width: max(300px, 50%)">
-      <div class="text-bold text-indigo-8" style="font-size: 4em">Login</div>
+  <div class="fullscreen bg-blue text-center q-pa-md flex flex-center">
+    <div class="bg-white q-pa-md login-wrap">
+      <div class="text-bold text-indigo-8 login-title">Login</div>
 
       <q-form @submit.prevent="onSubmit">
         <q-input v-model="id" type="text" label="ID" required />
@@ -66,3 +64,11 @@ const showNotif = () => {
   });
 };
 </script>
+<style lang="scss" scoped>
+.login-wrap {
+  width: max(300px, 50%);
+}
+.login-title {
+  font-size: 4em;
+}
+</style>
