@@ -40,6 +40,12 @@ export const useDrawerStore = defineStore('drawer', {
         link: '/edit',
       },
       {
+        title: '테이블',
+        caption: '테이블 연습 페이지',
+        icon: 'person',
+        link: '/table',
+      },
+      {
         title: '로그아웃',
         caption: '로그아웃',
         icon: 'logout',

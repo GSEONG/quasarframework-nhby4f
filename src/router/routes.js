@@ -34,6 +34,11 @@ const routes = [
         name: 'edit',
         component: () => import('pages/EditPage.vue'),
       },
+      {
+        path: '/table',
+        name: 'table',
+        component: () => import('pages/TablePage.vue'),
+      },
     ],
     // beforeEnter: (to, from, next) => {
     //   if (localStorage.getItem('test') !== null) {
