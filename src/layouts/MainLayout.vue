@@ -42,6 +42,9 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-footer>
+      <div class="bg-blue-10 text-center">Quasar v{{ $q.version }}</div>
+    </q-footer>
   </q-layout>
 </template>
 

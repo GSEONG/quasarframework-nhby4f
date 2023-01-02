@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center column justify-between">
     <q-table
       dark
       :rows-per-page-options="[0]"
