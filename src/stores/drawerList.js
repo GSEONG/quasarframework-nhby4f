@@ -46,6 +46,18 @@ export const useDrawerStore = defineStore('drawer', {
         link: '/table',
       },
       {
+        title: '테이블2',
+        caption: '테이블 연습 페이지2',
+        icon: 'person',
+        link: '/table2',
+      },
+      {
+        title: '테이블3',
+        caption: '테이블 연습 페이지3',
+        icon: 'person',
+        link: '/table3',
+      },
+      {
         title: '로그아웃',
         caption: '로그아웃',
         icon: 'logout',

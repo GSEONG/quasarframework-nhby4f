@@ -39,6 +39,16 @@ const routes = [
         name: 'table',
         component: () => import('pages/TablePage.vue'),
       },
+      {
+        path: '/table2',
+        name: 'table2',
+        component: () => import('pages/TableBasicPage.vue'),
+      },
+      {
+        path: '/table3',
+        name: 'table3',
+        component: () => import('pages/TableAdvancedPage.vue'),
+      },
     ],
     // beforeEnter: (to, from, next) => {
     //   if (localStorage.getItem('test') !== null) {
