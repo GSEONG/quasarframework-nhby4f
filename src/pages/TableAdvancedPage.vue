@@ -2,6 +2,8 @@
   <q-page class="flex flex-center">
     <q-table
       v-model:pagination="pagination"
+      v-model:selected="selected"
+      selection="multiple"
       color="secondary"
       :loading="loading"
       :rows="dogs"
@@ -10,8 +12,17 @@
       row-key="email"
       @request="handleResult"
     >
+      <template #header-selection="scope">
+        <q-toggle v-model="scope.selected" />
+      </template>
+      <template #body-selection="scope">
+        <q-toggle v-model="scope.selected" />
+      </template>
       <template #loading>
         <q-inner-loading showing color="secondary" />
+      </template>
+      <template #top>
+        <q-btn @click="printSelected" label="data" />
       </template>
     </q-table>
   </q-page>
@@ -21,6 +32,7 @@
 import axios from 'axios';
 import { ref, readonly } from 'vue';
 
+const selected = ref();
 const url = readonly('https://table.quasarcomponents.com/dogs');
 const geturl = readonly(url + '/getschedule');
 console.log(geturl);
@@ -66,6 +78,10 @@ const fetchDogs = (page = 0) => {
 const handleResult = (props) => {
   loading.value = true;
   fetchDogs(props.pagination.page);
+};
+
+const printSelected = () => {
+  console.log(selected.value);
 };
 fetchDogs();
 </script>
