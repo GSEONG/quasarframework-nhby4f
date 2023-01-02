@@ -6,7 +6,7 @@
       :loading="loading"
       :rows="dogs"
       :columns="columns"
-      :rows-per-page-options="[3, 5, 15, 0]"
+      :rows-per-page-options="[]"
       row-key="email"
       @request="handleResult"
     >
@@ -22,6 +22,8 @@ import axios from 'axios';
 import { ref, readonly } from 'vue';
 
 const url = readonly('https://table.quasarcomponents.com/dogs');
+const geturl = readonly(url + '/getschedule');
+console.log(geturl);
 const loading = ref(true);
 const dogs = ref([]);
 const pagination = ref({
