@@ -12,12 +12,12 @@
       row-key="email"
       @request="handleResult"
     >
-      <template #header-selection="scope">
+      <!-- <template #header-selection="scope">
         <q-toggle v-model="scope.selected" />
-      </template>
-      <template #body-selection="scope">
+      </template> -->
+      <!-- <template #body-selection="scope">
         <q-toggle v-model="scope.selected" />
-      </template>
+      </template> -->
       <template #loading>
         <q-inner-loading showing color="secondary" />
       </template>
