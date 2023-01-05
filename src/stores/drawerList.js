@@ -58,6 +58,12 @@ export const useDrawerStore = defineStore('drawer', {
         link: '/table3',
       },
       {
+        title: '엑셀 업로드',
+        caption: '엑셀 파일 업로드',
+        icon: 'description',
+        link: '/excel',
+      },
+      {
         title: '로그아웃',
         caption: '로그아웃',
         icon: 'logout',

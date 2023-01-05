@@ -49,6 +49,11 @@ const routes = [
         name: 'table3',
         component: () => import('pages/TableAdvancedPage.vue'),
       },
+      {
+        path: '/excel',
+        name: 'excel',
+        component: () => import('pages/ExcelPage.vue'),
+      },
     ],
     // beforeEnter: (to, from, next) => {
     //   if (localStorage.getItem('test') !== null) {
