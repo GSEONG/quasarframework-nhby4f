@@ -1,9 +1,16 @@
 <template>
   <q-page class="flex column flex-center">
     <!-- <q-file v-model="model" label="Select ExcelFile" hint="엑셀파일" /> -->
-    <q-input type="file" hint="엑셀파일" @update:model-value="handleFile" />
-
-    <q-table class="full-width" separator="cell" :rows="tableData">
+    <div class="full-width">
+      <q-input type="file" hint="엑셀파일" @update:model-value="handleFile" />
+    </div>
+    <q-table
+      class="full-width"
+      separator="cell"
+      dense
+      :rows="tableData"
+      :rows-per-page-options="[15, 0]"
+    >
       <template #top>
         <q-tabs
           v-model="tab"
@@ -35,6 +42,7 @@ const row = ref({});
 const sheetList = ref([]);
 const tableData = ref([]);
 
+const columns = ref([]);
 const tab = ref(null);
 
 async function handleFile(event) {
@@ -46,7 +54,7 @@ async function handleFile(event) {
   sheetList.value = workbook.SheetNames;
   tab.value = sheetList.value[0];
 
-  console.log(workbook.SheetNames);
+  console.log('워크시트 리스트: ', sheetList.value);
 
   sheetList.value.forEach((sheetName, index) => {
     const sheetObject = {
