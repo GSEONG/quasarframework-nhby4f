@@ -27,6 +27,20 @@
           />
         </q-tabs>
       </template>
+      <template #header="props">
+        <q-tr :props="props">
+          <q-th v-for="headerName in props.cols" :key="headerName">
+            {{ headerName.label }}
+          </q-th>
+        </q-tr>
+      </template>
+      <!-- <template #body="props">
+        <q-tr :props="props">
+          <q-td v-for="(item, key) in props.cols" :key="key">
+            {{ key }} : {{ props.row[item.name] }}
+          </q-td>
+        </q-tr>
+      </template> -->
     </q-table>
   </q-page>
 </template>
@@ -73,3 +87,11 @@ const fetchSheetData = () => {
   tableData.value = Object.values(row.value[`${tab.value}`]);
 };
 </script>
+
+<style scoped lang="scss">
+.edit-input {
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+}
+</style>
