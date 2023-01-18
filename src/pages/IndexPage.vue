@@ -20,7 +20,7 @@
             <q-item-section side>
               <q-checkbox :model-value="true" />
             </q-item-section>
-            <q-item-section> Go shopping </q-item-section>
+            <q-item-section> 마우스좌표:{{ x }}, {{ y }}</q-item-section>
             <q-item-section side>
               <q-btn flat round size="sm" icon="delete" />
             </q-item-section>
@@ -80,6 +80,9 @@
       />
 
       <span class="q-mx-md text-bold" v-show="isShow">{{ count }}</span>
+      <span class="q-mx-md text-bold" v-show="isShow"
+        >Mosuse position is at: {{ mouse.x }}, {{ mouse.y }}</span
+      >
 
       <q-btn
         v-show="isShow"
@@ -116,16 +119,25 @@
     <RadioView :valList="valListNum" />
     <RadioView :valList="valListHan" />
     <RadioView :valList="valListHan" />
+    {{ data }}
+    {{ error }}
   </q-page>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import RadioView from '../components/RadioView.vue';
 import CardView from '../components/CardView.vue';
 
+import { useMouse } from '../composables/useMouse.js';
+import { useFetch } from '../composables/useFetch.js';
+
 const router = useRouter();
+const { x, y } = useMouse();
+const mouse = reactive(useMouse());
+const url = ref('https://pokeapi.co/api/v2/pokemon/ditto');
+const { data, error } = useFetch(url);
 
 const count = ref(0);
 const valListABC = ref(['a', 'b', 'c', 'd']);
