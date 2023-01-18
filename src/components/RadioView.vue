@@ -16,9 +16,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 
-const shape = ref('');
+const shape = ref<string>('');
 const props = defineProps(['valList']);
+
+function changeName(name) {
+  console.log(name);
+}
 </script>
