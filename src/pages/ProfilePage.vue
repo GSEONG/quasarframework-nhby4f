@@ -1,34 +1,35 @@
 <template>
-  <q-page :style-fn="myTweak" padding class="column wrapp">
-    <q-card v-for="i in 10" :key="i" class="column flex-center bg-secondary">
-      <q-avatar color="black" text-color="primary">C</q-avatar>
-      <q-card-section>청춘예찬</q-card-section>
-      <q-card-section
-        >새가 거친 같은 것이다. 사라지지 찾아다녀도, 얼마나 심장은 평화스러운
-        하는 봄바람이다. 능히 피는 관현악이며, 예가 그것은 이상은 그들의 어디
-        공자는 것이다. 만천하의 무한한 목숨이 있으며, 피어나기 생생하며, 이상을
-        곳이 부패뿐이다. 아니한 실로 심장의 보는 무엇을 예수는 생의 피에
-        그리하였는가? 이 낙원을 지혜는 커다란 인생에 무엇을 위하여, 청춘은
-        부패뿐이다. 구하지 인간이 두손을 때까지 용감하고 방황하여도, 힘있다.
-        보이는 용감하고 싸인 품으며, 부패뿐이다. 그들은 생생하며, 평화스러운
-        가는 만천하의 것이다. 이상, 못할 무엇을 인간은 더운지라 이성은
-        황금시대다. 너의 용감하고 위하여서 그리하였는가? 가슴에 가치를 얼음
-        방지하는 하는 눈이 열매를 피고, 전인 듣는다. 소리다.이것은 낙원을 봄날의
-        몸이 가는 피다. 동산에는 그들의 생의 되려니와, 피에 이 주는 칼이다. 되는
-        방황하여도, 위하여 피는 칼이다. 피고, 군영과 무엇을 이상을 보는 그들의
-        돋고, 위하여서, 그리하였는가? 창공에 열매를 얼마나 피가 뿐이다. 찾아
-        내려온 가치를 예가 듣는다. 실현에 갑 있는 듣기만 이상의 보배를 위하여서,
-        부패뿐이다. 더운지라 꽃 눈에 자신과 가장 풍부하게 보이는 칼이다. 무한한
-        없으면, 구하기 것은 얼마나 아니한 힘있다.</q-card-section
+  <q-page :style-fn="myTweak" class="flex row justify-center">
+    <q-card
+      v-for="i in 9"
+      :key="i"
+      class="column flex-center q-mx-lg q-my-md col-3"
+    >
+      <q-img
+        src="https://w.namu.la/s/dc42bb0527e08b0d65f370f3a8ad1c471ccbd90a5f01b85343e6471c7f4100486b9be8514d380c33651c70fdc1c7da610cd2effaa9696b1226d29082faa22131e41b8bd7a75491abd0819c4789a517c0db561694b1ce1b4d412b59b5e2b551eb549e8e1b2b09ec004db0e4ab604e935d"
+        style="height: 140px; max-width: 150px"
+        class="q-my-md"
+      />
+      <q-card-section class="q-ma-none q-pa-none text-weight-bolder"
+        >I love cats</q-card-section
       >
+      <q-card-section class="q-ma-xs q-pa-none q-px-sm"
+        >Need to check on human, have not seen in an hour might be dead oh look,
+        human is alive, hiss at human, feed me chill me on the couch
+        table.</q-card-section
+      >
+      <q-btn class="q-ma-sm">click</q-btn>
     </q-card>
   </q-page>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+const offset = ref(300);
+
 const myTweak = (offset) => {
   return {
-    minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh',
+    minHeight: offset ? `calc(50vh - ${offset}px)` : '50vh',
   };
 };
 </script>

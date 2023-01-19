@@ -20,7 +20,12 @@
 import { ref } from 'vue';
 
 const shape = ref<string>('');
-const props = defineProps(['valList']);
+const props = defineProps({
+  valList: {
+    required: true,
+    type: Array[String],
+  },
+});
 
 function changeName(name) {
   console.log(name);
